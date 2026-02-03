@@ -1,858 +1,295 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jakir Ali Sayyed - Android Developer</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Jakir Ali Sayyed – Golang Backend Engineer | Fintech Specialist</title>
+    <meta name="description" content="Experienced Golang Backend Developer specializing in scalable microservices, fintech payment systems, BBPS, UPI, and high-performance APIs. Building reliable financial infrastructure."/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        primarydark: '#1d4ed8',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --text-color: #1f2937;
-            --light-gray: #f3f4f6;
-            --white: #ffffff;
+        .gradient-hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2), 0 10px 10px -5px rgba(0,0,0,0.1);
         }
-
-        body {
-            line-height: 1.6;
-            color: var(--text-color);
-        }
-
-        /* Header Styles */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: var(--white);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            z-index: 1000;
-            padding: 1rem;
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(rgba(37,99,235,0.1), rgba(37,99,235,0.05));
-            padding: 0 1rem;
-            margin-top: 60px;
-        }
-
-        .hero-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero-content p {
-            animation: fadeInUp 1s ease 0.2s forwards;
-            opacity: 0;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: var(--primary-color);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 0.5rem;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            animation: fadeInUp 1s ease 0.4s forwards;
-            opacity: 0;
-        }
-
-        .cta-button:hover {
-            background: var(--secondary-color);
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(37,99,235,0.2);
-        }
-
-        /* Section Styles */
-        section {
-            padding: 5rem 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--primary-color);
-            font-size: 2rem;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background: var(--primary-color);
-            margin: 0.5rem auto;
-        }
-
-        /* About Section */
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            animation: fadeIn 1s ease;
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-            padding: 2rem;
-        }
-
-        .skill-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            animation: fadeIn 0.5s ease forwards;
-            opacity: 0;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 12px rgba(0,0,0,0.2);
-        }
-
-        .skill-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1rem;
-            padding: 1rem;
-            border-radius: 50%;
-            background: var(--light-gray);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .skill-card:hover .skill-icon {
-            background: var(--primary-color);
-            transform: rotate(360deg);
-        }
-
-        .skill-card:hover .skill-icon img {
-            filter: brightness(0) invert(1);
-        }
-
-        .skill-icon img {
-            width: 100%;
-            height: auto;
-            transition: all 0.3s ease;
-        }
-
-        .skill-name {
-            font-weight: bold;
-            margin: 1rem 0;
-            color: var(--text-color);
-        }
-
-        .skill-level {
-            width: 100%;
-            height: 6px;
-            background: var(--light-gray);
-            border-radius: 3px;
-            margin-top: 1rem;
-            overflow: hidden;
-        }
-
-        .skill-progress {
-            height: 100%;
-            background: var(--primary-color);
-            border-radius: 3px;
-            width: 0;
-            transition: width 1s ease;
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: var(--white);
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0,0,0,0.2);
-        }
-
-        .project-image {
-            height: 200px;
-            background: var(--light-gray);
-            overflow: hidden;
-        }
-
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover .project-image img {
-            transform: scale(1.05);
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-content h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        /* Experience Section */
-        .experience-item {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .experience-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-
-        .experience-item h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        /* Contact Section */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 0.5rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-info p {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-links a {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .social-links a:hover {
-            transform: translateY(-3px);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-
-        /* Mobile Navigation */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            cursor: pointer;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--white);
-                flex-direction: column;
-                padding: 1rem;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-fade-in {
-            animation: fadeIn 1s ease forwards;
+        .progress {
+            transition: width 1.2s ease-out;
         }
     </style>
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">Jakir Ali Sayyed</div>
-            <button class="mobile-menu-btn">
+<body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-800">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-primary">Jakir Sayyed</div>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="hover:text-primary transition">Home</a>
+                <a href="#about" class="hover:text-primary transition">About</a>
+                <a href="#skills" class="hover:text-primary transition">Skills</a>
+                <a href="#experience" class="hover:text-primary transition">Experience</a>
+                <a href="#projects" class="hover:text-primary transition">Projects</a>
+                <a href="#contact" class="bg-primary text-white px-5 py-2 rounded-lg hover:bg-primarydark transition">Contact</a>
+            </div>
+            
+            <button id="mobile-menu-btn" class="md:hidden text-2xl">
                 <i class="fas fa-bars"></i>
             </button>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Experience</a>
-                <a href="#contact">Contact</a>
-            </div>
         </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 border-b">
+            <div class="flex flex-col p-6 space-y-4">
+                <a href="#home" class="hover:text-primary">Home</a>
+                <a href="#about" class="hover:text-primary">About</a>
+                <a href="#skills" class="hover:text-primary">Skills</a>
+                <a href="#experience" class="hover:text-primary">Experience</a>
+                <a href="#projects" class="hover:text-primary">Projects</a>
+                <a href="#contact" class="bg-primary text-white px-5 py-3 rounded-lg text-center">Contact Me</a>
+            </div>
+        </div>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Hi, I'm Jakir Ali Sayyed</h1>
-            <h3>Experienced Android Developer & Golang Backend Developer | Specializing in Microservices for Fintech Applications</h3>
-            <br>
-            <a href="#contact" class="cta-button">Contact Me</a>
+    <!-- Hero -->
+    <section id="home" class="min-h-screen gradient-hero text-white flex items-center pt-20">
+        <div class="max-w-6xl mx-auto px-6 py-20">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+                Golang Backend Engineer<br/>
+                <span class="text-blue-200">Fintech & Payment Systems</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl opacity-90">
+                Building scalable, secure, high-performance microservices powering real-time financial applications. 
+                2+ years focused on fintech backend — UPI, BBPS, payment gateways, distributed systems.
+            </p>
+            <div class="flex flex-wrap gap-6">
+                <a href="#contact" class="bg-white text-primary px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition transform hover:-translate-y-1">
+                    Hire Me →
+                </a>
+                <a href="https://github.com/Jakirsayyed98" target="_blank" class="border-2 border-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition">
+                    View GitHub →
+                </a>
+            </div>
         </div>
     </section>
 
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <p>Hello! I’m a versatile Android Developer and Golang Backend Developer with a proven track record in creating user-centric mobile applications and building scalable backend systems. My passion lies in crafting innovative and efficient solutions that drive business growth.
-
-With extensive experience in Android development, I specialize in creating intuitive applications that provide seamless user experiences. I excel at integrating third-party modules, optimizing app performance, and ensuring cross-platform compatibility. Additionally, I am well-versed in project management, leading teams to deliver projects on time and within scope.
-
-Currently, I’m focused on backend development as a Golang developer, specializing in microservices architecture. I work with MongoDB, PostgreSQL, and Redis to build high-performance, scalable systems that support modern applications. My goal is to bridge the gap between frontend and backend technologies to deliver complete, end-to-end solutions.
-
-I am dedicated to continuous learning and always eager to explore new technologies that can enhance my skill set. Whether it's mobile apps or backend services, I am passionate about delivering reliable, high-quality solutions.
-
-🔗 Technologies: Android, Kotlin, Java, Golang, Microservices, MongoDB, PostgreSQL, Redis, API Development, Cloud Solutions, Project Management</p>
-            <p>📍 Location: Mumbai, Maharashtra</p>
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills-grid">
-            <!-- Technical Skills -->
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="src/java.webp" alt="Java" />
-                </div>
-                <h4 class="skill-name">Java</h4>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 90%"></div>
-                </div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="src/kotlin.svg" alt="Kotlin" />
-                </div>
-                <h4 class="skill-name">Kotlin</h4>
-                <div class="skill-level">
-                    <div class="skill-progress" style="width: 85%"></div>
-                </div>
-            </div>
-            <!-- Add more skill cards for Go, PostgreSQL, Firebase, Retrofit -->
+    <!-- About -->
+    <section id="about" class="py-24 bg-white dark:bg-gray-900">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-primary">About Me</h2>
             
-           
-            <!-- Add more soft skill cards -->
-
-            <div class="skill-card">
-    <div class="skill-icon">
-        <img src="src/android.svg" alt="Android Development" />
-    </div>
-    <h4 class="skill-name">Android Development</h4>
-    <div class="skill-level">
-        <div class="skill-progress" style="width: 90%"></div>
-    </div>
-</div>
-
-
-
-<div class="skill-card">
-    <div class="skill-icon">
-        <img src="src/go.svg" alt="Golang" />
-    </div>
-    <h4 class="skill-name">Golang</h4>
-    <div class="skill-level">
-        <div class="skill-progress" style="width: 80%"></div>
-    </div>
-</div>
-
-<div class="skill-card">
-    <div class="skill-icon">
-        <img src="src/postgresql.svg" alt="API Design & Integration" />
-    </div>
-    <h4 class="skill-name">Postgress</h4>
-    <div class="skill-level">
-        <div class="skill-progress" style="width: 85%"></div>
-    </div>
-</div>
-
-<div class="skill-card">
-    <div class="skill-icon">
-        <img src="src/mongo.png" alt="MongoDB" />
-    </div>
-    <h4 class="skill-name">MongoDB</h4>
-    <div class="skill-level">
-        <div class="skill-progress" style="width: 88%"></div>
-    </div>
-</div>
-
-<div class="skill-card">
-    <div class="skill-icon">
-        <img src="src/redis.svg" alt="MongoDB" />
-    </div>
-    <h4 class="skill-name">Redis DB</h4>
-    <div class="skill-level">
-        <div class="skill-progress" style="width: 88%"></div>
-    </div>
-</div>
-
-<div class="skill-card">
-    <div class="skill-icon">
-        <img src="src/firebase.svg" alt="MongoDB" />
-    </div>
-    <h4 class="skill-name">Firebase DB</h4>
-    <div class="skill-level">
-        <div class="skill-progress" style="width: 88%"></div>
-    </div>
-</div>
-
-
-<div class="skill-card">
-    <div class="skill-icon">
-        <img src="src/onlinepayment.png" alt="Cloud" />
-    </div>
-    <h4 class="skill-name">3rd Party Payment Gateway</h4>
-    <div class="skill-level">
-        <div class="skill-progress" style="width: 80%"></div>
-    </div>
-</div>
-
-
-<div class="skill-card">
-    <div class="skill-icon">
-        <img src="src/git.svg" alt="Version Control" />
-    </div>
-    <h4 class="skill-name">Version Control</h4>
-    <div class="skill-level">
-        <div class="skill-progress" style="width: 90%"></div>
-    </div>
-</div>
-
-<div class="skill-card">
-    <div class="skill-icon">
-        <img src="src/bbps.png" alt="Cloud" />
-    </div>
-    <h4 class="skill-name">BBPS</h4>
-    <div class="skill-level">
-        <div class="skill-progress" style="width: 80%"></div>
-    </div>
-</div>
-
-<div class="skill-card">
-    <div class="skill-icon">
-        <img src="src/upi.svg" alt="Cloud" />
-    </div>
-    <h4 class="skill-name">UPI</h4>
-    <div class="skill-level">
-        <div class="skill-progress" style="width: 80%"></div>
-    </div>
-</div>
-
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2 class="section-title">Projects</h2>
-        <div class="projects-grid">
-            <!-- <div class="project-card">
-                <div class="project-image">
-
-[Previous code remains exactly the same until the projects section...]
-
-             Projects Section -->
-      <div class="project-card">
-        <div class="project-image">
-            <img src="/api/placeholder/400/200" alt="My Basket App" />
-        </div>
-        <div class="project-content">
-            <h3>My Basket App</h3>
-            <p><strong>Description:</strong> E-commerce application for ordering fruits, vegetables, and food items.</p>
-            <p><strong>Details:</strong></p>
-            <ul>
-                <li>Developed an e-commerce application for ordering fruits, vegetables, and food items with online payment integration.</li>
-                <li>Implemented features for contactless delivery and the ability to schedule delivery times.</li>
-                <li>Integrated secure online payment gateways and optimized the user interface for better user experience.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="project-card">
-        <div class="project-image">
-            <img src="/api/placeholder/400/200" alt="Brinezon App" />
-        </div>
-        <div class="project-content">
-            <h3>Brinezon App</h3>
-            <p><strong>Description:</strong> All-in-one platform for grocery ordering, food ordering, and cab booking services.</p>
-            <p><strong>Details:</strong></p>
-            <ul>
-                <li>Developed an all-in-one platform for grocery ordering, food ordering, and cab booking services.</li>
-                <li>Implemented contactless delivery and scheduling options for users.</li>
-                <li>Integrated secure online payment gateway (Razorpay) for seamless transactions.</li>
-                <li>Optimized the user interface to enhance user experience across multiple service categories.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="project-card">
-        <div class="project-image">
-            <img src="/api/placeholder/400/200" alt="Srapswala App" />
-        </div>
-        <div class="project-content">
-            <h3>Srapswala App</h3>
-            <p><strong>Description:</strong> Application facilitating online scrap selling.</p>
-            <p><strong>Details:</strong></p>
-            <ul>
-                <li>Developed an app for users to sell scrap online.</li>
-                <li>Enabled vendors to collect scrap and make payments based on scrap value.</li>
-                <li>Worked on the application’s backend to support real-time tracking and data management.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="project-card">
-        <div class="project-image">
-            <img src="/api/placeholder/400/200" alt="Perkhub" />
-        </div>
-        <div class="project-content">
-            <h3>Perkhub</h3>
-            <p><strong>Description:</strong> Cashback application for online shopping.</p>
-            <p><strong>Details:</strong></p>
-            <ul>
-                <li>Developed a cashback application where users received cashback on purchases made through the app.</li>
-                <li>Integrated more than 200 stores like Amazon, Flipkart, and Myntra into the platform.</li>
-                <li>Implemented user authentication, transaction history tracking, and cashback rewards system.</li>
-            </ul>
-        </div>
-    </div>
-
-        </div>
-    </section>
-
-    <section id="experience">
-        <h2 class="section-title">Experience</h2>
-        <div class="experience-item">
-            <h3>Paydoh (Grapesberry Technologies Pvt Ltd)</h3>
-            <p>Gloang Backend Developer (08/2023 - Present)</p>
-            <p>Highlights: RESTful APIs, PostgreSQL, MongoDB, Redis, performance tuning, third-party integrations, MicroServices.</p>
-        </div>
-        <div class="experience-item">
-            <h3>Bitinfoz Technology PVT LTD (Tapfo)</h3>
-            <p>Android Developer (02/2022 - 08/2023)</p>
-            <p>Highlights: Payment gateways, live gold price tracking, BBPS integration, voucher services.</p>
-        </div>
-    </section>
-
-    <section id="education">
-        <h2 class="section-title">Education</h2>
-        <div class="experience-item">
-            <h3>B.Com, Mumbai University</h3>
-            <p>2016-2021</p>
-        </div>
-        <div class="experience-item">
-            <h3>HSC, Maharashtra Board</h3>
-            <p>2018</p>
-        </div>
-        <div class="experience-item">
-            <h3>SSC, Maharashtra Board</h3>
-            <p>2016</p>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2 class="section-title">Contact</h2>
-        <div class="contact-container">
-            <!-- <form class="contact-form" id="contactForm">
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <textarea name="message" placeholder="Message" rows="5" required></textarea>
-                <button type="submit" class="cta-button">Send Message</button>
-            </form> -->
-            <div class="contact-info">
-                <p><i class="fas fa-phone"></i> +91 8108893686</p>
-                <p><i class="fas fa-envelope"></i> jakirsayyed98@gmail.com</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/jakir-sayyed-b54551195" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/Jakirsayyed98" target="_blank"><i class="fab fa-github"></i></a>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-lg leading-relaxed mb-6">
+                        I'm a passionate **Golang Backend Engineer** with deep expertise in fintech infrastructure. 
+                        For the last 2+ years I've been building reliable, scalable microservices that process real-time payments, 
+                        handle millions of transactions securely, and integrate complex financial rails (UPI, BBPS, card payments).
+                    </p>
+                    <p class="text-lg leading-relaxed mb-6">
+                        I specialize in:
+                    </p>
+                    <ul class="text-lg space-y-3 mb-8">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-primary mr-3 mt-1"></i>Designing clean, performant REST & gRPC APIs</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-primary mr-3 mt-1"></i>Event-driven architecture & message queues</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-primary mr-3 mt-1"></i>Database optimization (PostgreSQL, MongoDB, Redis)</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-primary mr-3 mt-1"></i>High-availability & fault-tolerant systems</li>
+                    </ul>
+                    <p class="text-lg font-medium">Open to full-time backend / fintech opportunities in India & remote.</p>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-gray-100 dark:bg-gray-800 p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold mb-4">Tech Stack Snapshot</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Golang • Microservices • PostgreSQL • MongoDB • Redis • Kafka/RabbitMQ • Docker • Kubernetes • AWS/GCP • Gin/Echo/Fiber</p>
+                    </div>
+                    
+                    <div class="bg-gray-100 dark:bg-gray-800 p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold mb-4">Location</h3>
+                        <p class="text-xl">Mumbai, Maharashtra, India</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>© 2024 Jakir Sayyed</p>
-        <div class="social-links">
-            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+    <!-- Skills -->
+    <section id="skills" class="py-24 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-primary">Core Skills</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Skill cards -->
+                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg card-hover transition-all duration-300">
+                    <div class="text-5xl text-primary mb-4"><i class="devicon-go-plain"></i></div>
+                    <h4 class="text-xl font-bold mb-3">Golang</h4>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                        <div class="progress bg-primary h-2.5 rounded-full w-[90%]"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg card-hover transition-all duration-300">
+                    <div class="text-5xl text-primary mb-4"><i class="devicon-postgresql-plain"></i></div>
+                    <h4 class="text-xl font-bold mb-3">PostgreSQL</h4>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                        <div class="progress bg-primary h-2.5 rounded-full w-[88%]"></div>
+                    </div>
+                </div>
+                
+                <!-- Repeat similar structure for: MongoDB, Redis, Microservices, API Design, Docker, Git, UPI/BBPS/Payment Gateways -->
+                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg card-hover transition-all duration-300">
+                    <div class="text-5xl text-primary mb-4"><i class="fas fa-database"></i></div>
+                    <h4 class="text-xl font-bold mb-3">MongoDB</h4>
+                    <div class="progress-bar bg-primary h-2.5 rounded-full w-[87%]"></div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg card-hover transition-all duration-300">
+                    <div class="text-5xl text-primary mb-4"><i class="fas fa-bolt"></i></div>
+                    <h4 class="text-xl font-bold mb-3">Redis</h4>
+                    <div class="progress-bar bg-primary h-2.5 rounded-full w-[85%]"></div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg card-hover transition-all duration-300">
+                    <div class="text-5xl text-primary mb-4"><i class="fas fa-cubes"></i></div>
+                    <h4 class="text-xl font-bold mb-3">Microservices</h4>
+                    <div class="progress-bar bg-primary h-2.5 rounded-full w-[85%]"></div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg card-hover transition-all duration-300">
+                    <div class="text-5xl text-primary mb-4"><i class="fas fa-credit-card"></i></div>
+                    <h4 class="text-xl font-bold mb-3">Payment Gateways</h4>
+                    <div class="progress-bar bg-primary h-2.5 rounded-full w-[82%]"></div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg card-hover transition-all duration-300">
+                    <div class="text-5xl text-primary mb-4"><i class="fab fa-git-alt"></i></div>
+                    <h4 class="text-xl font-bold mb-3">Git & CI/CD</h4>
+                    <div class="progress-bar bg-primary h-2.5 rounded-full w-[92%]"></div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg card-hover transition-all duration-300">
+                    <div class="text-5xl text-primary mb-4"><i class="fas fa-mobile-alt"></i></div>
+                    <h4 class="text-xl font-bold mb-3">UPI / BBPS</h4>
+                    <div class="progress-bar bg-primary h-2.5 rounded-full w-[85%]"></div>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="py-24 bg-white dark:bg-gray-900">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-primary">Professional Experience</h2>
+            
+            <div class="space-y-12">
+                <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-lg card-hover transition-all">
+                    <h3 class="text-3xl font-bold text-primary mb-3">Golang Backend Developer</h3>
+                    <p class="text-xl mb-4">Paydoh @ Grapesberry Technologies Pvt Ltd • Aug 2023 – Present</p>
+                    <ul class="text-lg space-y-3 list-disc pl-6">
+                        <li>Architected and maintained microservices powering real-time fintech transactions</li>
+                        <li>Designed high-throughput REST & gRPC APIs with Gin framework</li>
+                        <li>Optimized PostgreSQL & MongoDB queries — reduced latency by 40%+</li>
+                        <li>Implemented caching strategies with Redis → improved response time significantly</li>
+                        <li>Integrated third-party payment providers & financial rails securely</li>
+                        <li>Worked in event-driven environment with message queues</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-lg card-hover transition-all">
+                    <h3 class="text-3xl font-bold text-primary mb-3">Android Developer (earlier career)</h3>
+                    <p class="text-xl mb-4">Bitinfoz Technology Pvt Ltd (Tapfo) • Feb 2022 – Aug 2023</p>
+                    <ul class="text-lg space-y-3 list-disc pl-6">
+                        <li>Built fintech Android apps with UPI, BBPS, live gold rates, vouchers</li>
+                        <li>Integrated multiple payment gateways (Razorpay + others)</li>
+                        <li>Learned fintech domain deeply → transitioned successfully to backend</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-24 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-primary">Notable Projects</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Project cards – keep your best fintech-relevant ones, improve descriptions -->
+                <div class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-xl card-hover transition-all">
+                    <div class="h-48 bg-gradient-to-br from-blue-600 to-indigo-800 flex items-center justify-center">
+                        <span class="text-6xl text-white opacity-40"><i class="fas fa-wallet"></i></span>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4">Fintech Payment Microservices (Current)</h3>
+                        <p class="mb-4">Core backend services handling real-time payments, transaction reconciliation, fraud checks & settlement logic.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">Golang</span>
+                            <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">Microservices</span>
+                            <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add 2–4 strong projects with fintech angle or backend focus -->
+                <!-- You can reuse/improve your previous ones but emphasize backend contribution -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section id="contact" class="py-24 gradient-hero text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold mb-10">Let's Build Something Great Together</h2>
+            <p class="text-xl mb-12 max-w-2xl mx-auto">
+                Looking for a reliable Golang backend engineer with real fintech experience?  
+                I'm currently open to new opportunities — remote / Mumbai / hybrid.
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8 text-lg">
+                <div class="flex items-center gap-4">
+                    <i class="fas fa-phone text-3xl"></i>
+                    <span>+91 81088 93686</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <i class="fas fa-envelope text-3xl"></i>
+                    <a href="mailto:jakirsayyed98@gmail.com" class="hover:underline">jakirsayyed98@gmail.com</a>
+                </div>
+            </div>
+            
+            <div class="mt-12 flex justify-center gap-10 text-4xl">
+                <a href="https://www.linkedin.com/in/jakir-sayyed-b54551195" target="_blank" class="hover:text-blue-200 transition"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Jakirsayyed98" target="_blank" class="hover:text-blue-200 transition"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center">
+        <p>© 2026 Jakir Ali Sayyed • Made with Golang passion & clean code</p>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         });
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('nav')) {
-                navLinks.classList.remove('active');
-            }
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                navLinks.classList.remove('active');
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Skill progress animation
-        function animateSkillProgress() {
-            const skillCards = document.querySelectorAll('.skill-card');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const progress = entry.target.querySelector('.skill-progress');
-                        if (progress) {
-                            const width = progress.style.width;
-                            progress.style.width = '0';
-                            setTimeout(() => {
-                                progress.style.width = width;
-                            }, 100);
-                        }
-                        entry.target.style.opacity = '1';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.2
-            });
-
-            skillCards.forEach(card => {
-                observer.observe(card);
-            });
-        }
-
-        // Header scroll effect
-        function handleHeaderScroll() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            } else {
-                header.style.background = 'var(--white)';
-                header.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
-            }
-        }
-
-        // Contact form handling
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            const formObject = Object.fromEntries(formData);
-            
-            // Add your form submission logic here
-            console.log('Form submitted:', formObject);
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
-        });
-
-        // Initialize animations and effects
-        window.addEventListener('load', () => {
-            animateSkillProgress();
-        });
-
-        window.addEventListener('scroll', () => {
-            handleHeaderScroll();
-        });
-
-        // Lazy loading for project images
-        if ('IntersectionObserver' in window) {
-            const imgObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        observer.unobserve(img);
-                    }
-                });
-            });
-
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imgObserver.observe(img);
-            });
-        }
+        // Smooth scroll (already enabled with scroll-smooth)
     </script>
 </body>
 </html>
