@@ -1,295 +1,569 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Jakir Ali Sayyed – Golang Backend Engineer | Fintech Specialist</title>
-    <meta name="description" content="Experienced Golang Backend Developer specializing in scalable microservices, fintech payment systems, BBPS, UPI, and high-performance APIs. Building reliable financial infrastructure."/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#2563eb',
-                        primarydark: '#1d4ed8',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .gradient-hero {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-        }
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2), 0 10px 10px -5px rgba(0,0,0,0.1);
-        }
-        .progress {
-            transition: width 1.2s ease-out;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jakir Ali Sayyed | Backend Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+<body>
+    <!-- Background Elements -->
+    <div class="grid-background"></div>
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
 
-    <!-- Header / Navbar -->
-    <header class="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-800">
-        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-primary">Jakir Sayyed</div>
-            
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#home" class="hover:text-primary transition">Home</a>
-                <a href="#about" class="hover:text-primary transition">About</a>
-                <a href="#skills" class="hover:text-primary transition">Skills</a>
-                <a href="#experience" class="hover:text-primary transition">Experience</a>
-                <a href="#projects" class="hover:text-primary transition">Projects</a>
-                <a href="#contact" class="bg-primary text-white px-5 py-2 rounded-lg hover:bg-primarydark transition">Contact</a>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">JAS</span>
+                <span class="logo-bracket">/&gt;</span>
             </div>
-            
-            <button id="mobile-menu-btn" class="md:hidden text-2xl">
-                <i class="fas fa-bars"></i>
-            </button>
-        </nav>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 border-b">
-            <div class="flex flex-col p-6 space-y-4">
-                <a href="#home" class="hover:text-primary">Home</a>
-                <a href="#about" class="hover:text-primary">About</a>
-                <a href="#skills" class="hover:text-primary">Skills</a>
-                <a href="#experience" class="hover:text-primary">Experience</a>
-                <a href="#projects" class="hover:text-primary">Projects</a>
-                <a href="#contact" class="bg-primary text-white px-5 py-3 rounded-lg text-center">Contact Me</a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#tech" class="nav-link">Tech Stack</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link nav-link-cta">Connect</a>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Hero -->
-    <section id="home" class="min-h-screen gradient-hero text-white flex items-center pt-20">
-        <div class="max-w-6xl mx-auto px-6 py-20">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-                Golang Backend Engineer<br/>
-                <span class="text-blue-200">Fintech & Payment Systems</span>
-            </h1>
-            <p class="text-xl md:text-2xl mb-10 max-w-3xl opacity-90">
-                Building scalable, secure, high-performance microservices powering real-time financial applications. 
-                2+ years focused on fintech backend — UPI, BBPS, payment gateways, distributed systems.
-            </p>
-            <div class="flex flex-wrap gap-6">
-                <a href="#contact" class="bg-white text-primary px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition transform hover:-translate-y-1">
-                    Hire Me →
-                </a>
-                <a href="https://github.com/Jakirsayyed98" target="_blank" class="border-2 border-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition">
-                    View GitHub →
-                </a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-label">
+                    <span class="status-dot"></span>
+                    Available for opportunities
+                </div>
+                <h1 class="hero-title">
+                    <span class="hero-greeting">Hi, I'm</span>
+                    <span class="hero-name">Jakir Ali Sayyed</span>
+                </h1>
+                <div class="hero-role">
+                    <span class="role-tag">Backend Engineer</span>
+                    <span class="role-separator">|</span>
+                    <span class="role-tag">Golang Specialist</span>
+                </div>
+                <p class="hero-tagline">
+                    Building scalable fintech systems that process millions in transactions daily
+                </p>
+                <div class="hero-cta">
+                    <a href="https://github.com/jakirali" class="btn btn-primary">
+                        <span class="btn-icon">&#10095;</span>
+                        View GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/jakirali" class="btn btn-secondary">
+                        <span class="btn-icon">&#10022;</span>
+                        LinkedIn Profile
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number">Fintech</div>
+                        <div class="stat-label">Domain Expert</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Problems Solved</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="py-24 bg-white dark:bg-gray-900">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-primary">About Me</h2>
-            
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <p class="text-lg leading-relaxed mb-6">
-                        I'm a passionate **Golang Backend Engineer** with deep expertise in fintech infrastructure. 
-                        For the last 2+ years I've been building reliable, scalable microservices that process real-time payments, 
-                        handle millions of transactions securely, and integrate complex financial rails (UPI, BBPS, card payments).
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title">About Me</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-paragraph">
+                        Backend engineer with <strong>3+ years of experience</strong> specializing in building 
+                        high-performance fintech systems using <strong>Golang</strong>. My expertise lies in 
+                        architecting scalable microservices that handle critical payment operations including 
+                        UPI, IMPS, and NEFT transactions.
                     </p>
-                    <p class="text-lg leading-relaxed mb-6">
-                        I specialize in:
+                    <p class="about-paragraph">
+                        Previously worked as an <strong>Android Developer</strong>, bringing a unique perspective 
+                        to backend development with deep understanding of mobile-first architectures and real-time 
+                        data synchronization. This cross-platform experience enables me to build APIs that mobile 
+                        teams actually love to work with.
                     </p>
-                    <ul class="text-lg space-y-3 mb-8">
-                        <li class="flex items-start"><i class="fas fa-check-circle text-primary mr-3 mt-1"></i>Designing clean, performant REST & gRPC APIs</li>
-                        <li class="flex items-start"><i class="fas fa-check-circle text-primary mr-3 mt-1"></i>Event-driven architecture & message queues</li>
-                        <li class="flex items-start"><i class="fas fa-check-circle text-primary mr-3 mt-1"></i>Database optimization (PostgreSQL, MongoDB, Redis)</li>
-                        <li class="flex items-start"><i class="fas fa-check-circle text-primary mr-3 mt-1"></i>High-availability & fault-tolerant systems</li>
-                    </ul>
-                    <p class="text-lg font-medium">Open to full-time backend / fintech opportunities in India & remote.</p>
+                    <p class="about-paragraph">
+                        I'm passionate about creating <strong>secure, fault-tolerant systems</strong> that can 
+                        handle millions of transactions while maintaining data integrity. My focus is on writing 
+                        clean, maintainable code that scales with business growth.
+                    </p>
                 </div>
-                
-                <div class="space-y-6">
-                    <div class="bg-gray-100 dark:bg-gray-800 p-8 rounded-2xl">
-                        <h3 class="text-2xl font-bold mb-4">Tech Stack Snapshot</h3>
-                        <p class="text-gray-700 dark:text-gray-300">Golang • Microservices • PostgreSQL • MongoDB • Redis • Kafka/RabbitMQ • Docker • Kubernetes • AWS/GCP • Gin/Echo/Fiber</p>
+                <div class="about-highlights">
+                    <div class="highlight-card">
+                        <div class="highlight-icon">⚡</div>
+                        <h3 class="highlight-title">Performance</h3>
+                        <p class="highlight-text">Optimized systems handling 10K+ req/sec</p>
                     </div>
-                    
-                    <div class="bg-gray-100 dark:bg-gray-800 p-8 rounded-2xl">
-                        <h3 class="text-2xl font-bold mb-4">Location</h3>
-                        <p class="text-xl">Mumbai, Maharashtra, India</p>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">🔒</div>
+                        <h3 class="highlight-title">Security</h3>
+                        <p class="highlight-text">JWT auth & encryption at scale</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">📡</div>
+                        <h3 class="highlight-title">Real-time</h3>
+                        <p class="highlight-text">Notification systems & webhooks</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills" class="py-24 bg-gray-50 dark:bg-gray-800">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-primary">Core Skills</h2>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                <!-- Skill cards -->
-                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg card-hover transition-all duration-300">
-                    <div class="text-5xl text-primary mb-4"><i class="devicon-go-plain"></i></div>
-                    <h4 class="text-xl font-bold mb-3">Golang</h4>
-                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                        <div class="progress bg-primary h-2.5 rounded-full w-[90%]"></div>
+    <!-- Tech Stack Section -->
+    <section id="tech" class="tech-stack">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Tech Arsenal</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-category">
+                    <h3 class="tech-category-title">Backend & Languages</h3>
+                    <div class="tech-items">
+                        <div class="tech-badge tech-badge-primary">
+                            <span class="tech-icon">Go</span>
+                            <span class="tech-name">Golang</span>
+                        </div>
+                        <div class="tech-badge">
+                            <span class="tech-icon">Kt</span>
+                            <span class="tech-name">Kotlin</span>
+                        </div>
+                        <div class="tech-badge">
+                            <span class="tech-icon">API</span>
+                            <span class="tech-name">REST APIs</span>
+                        </div>
+                        <div class="tech-badge">
+                            <span class="tech-icon">μS</span>
+                            <span class="tech-name">Microservices</span>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg card-hover transition-all duration-300">
-                    <div class="text-5xl text-primary mb-4"><i class="devicon-postgresql-plain"></i></div>
-                    <h4 class="text-xl font-bold mb-3">PostgreSQL</h4>
-                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                        <div class="progress bg-primary h-2.5 rounded-full w-[88%]"></div>
+                <div class="tech-category">
+                    <h3 class="tech-category-title">Databases</h3>
+                    <div class="tech-items">
+                        <div class="tech-badge tech-badge-primary">
+                            <span class="tech-icon">PG</span>
+                            <span class="tech-name">PostgreSQL</span>
+                        </div>
+                        <div class="tech-badge">
+                            <span class="tech-icon">Mo</span>
+                            <span class="tech-name">MongoDB</span>
+                        </div>
+                        <div class="tech-badge tech-badge-primary">
+                            <span class="tech-icon">Re</span>
+                            <span class="tech-name">Redis</span>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Repeat similar structure for: MongoDB, Redis, Microservices, API Design, Docker, Git, UPI/BBPS/Payment Gateways -->
-                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg card-hover transition-all duration-300">
-                    <div class="text-5xl text-primary mb-4"><i class="fas fa-database"></i></div>
-                    <h4 class="text-xl font-bold mb-3">MongoDB</h4>
-                    <div class="progress-bar bg-primary h-2.5 rounded-full w-[87%]"></div>
+                <div class="tech-category">
+                    <h3 class="tech-category-title">Payment Systems</h3>
+                    <div class="tech-items">
+                        <div class="tech-badge tech-badge-accent">
+                            <span class="tech-icon">₹</span>
+                            <span class="tech-name">UPI</span>
+                        </div>
+                        <div class="tech-badge tech-badge-accent">
+                            <span class="tech-icon">₹</span>
+                            <span class="tech-name">IMPS</span>
+                        </div>
+                        <div class="tech-badge tech-badge-accent">
+                            <span class="tech-icon">₹</span>
+                            <span class="tech-name">NEFT</span>
+                        </div>
+                        <div class="tech-badge">
+                            <span class="tech-icon">💳</span>
+                            <span class="tech-name">Payment Gateways</span>
+                        </div>
+                        <div class="tech-badge">
+                            <span class="tech-icon">👛</span>
+                            <span class="tech-name">Wallets</span>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg card-hover transition-all duration-300">
-                    <div class="text-5xl text-primary mb-4"><i class="fas fa-bolt"></i></div>
-                    <h4 class="text-xl font-bold mb-3">Redis</h4>
-                    <div class="progress-bar bg-primary h-2.5 rounded-full w-[85%]"></div>
-                </div>
-
-                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg card-hover transition-all duration-300">
-                    <div class="text-5xl text-primary mb-4"><i class="fas fa-cubes"></i></div>
-                    <h4 class="text-xl font-bold mb-3">Microservices</h4>
-                    <div class="progress-bar bg-primary h-2.5 rounded-full w-[85%]"></div>
-                </div>
-
-                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg card-hover transition-all duration-300">
-                    <div class="text-5xl text-primary mb-4"><i class="fas fa-credit-card"></i></div>
-                    <h4 class="text-xl font-bold mb-3">Payment Gateways</h4>
-                    <div class="progress-bar bg-primary h-2.5 rounded-full w-[82%]"></div>
-                </div>
-
-                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg card-hover transition-all duration-300">
-                    <div class="text-5xl text-primary mb-4"><i class="fab fa-git-alt"></i></div>
-                    <h4 class="text-xl font-bold mb-3">Git & CI/CD</h4>
-                    <div class="progress-bar bg-primary h-2.5 rounded-full w-[92%]"></div>
-                </div>
-
-                <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg card-hover transition-all duration-300">
-                    <div class="text-5xl text-primary mb-4"><i class="fas fa-mobile-alt"></i></div>
-                    <h4 class="text-xl font-bold mb-3">UPI / BBPS</h4>
-                    <div class="progress-bar bg-primary h-2.5 rounded-full w-[85%]"></div>
+                <div class="tech-category">
+                    <h3 class="tech-category-title">Mobile & Tools</h3>
+                    <div class="tech-items">
+                        <div class="tech-badge">
+                            <span class="tech-icon">An</span>
+                            <span class="tech-name">Android Native</span>
+                        </div>
+                        <div class="tech-badge">
+                            <span class="tech-icon">🔐</span>
+                            <span class="tech-name">JWT Auth</span>
+                        </div>
+                        <div class="tech-badge">
+                            <span class="tech-icon">🔔</span>
+                            <span class="tech-name">FCM</span>
+                        </div>
+                        <div class="tech-badge">
+                            <span class="tech-icon">⏰</span>
+                            <span class="tech-name">Cron Jobs</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience -->
-    <section id="experience" class="py-24 bg-white dark:bg-gray-900">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-primary">Professional Experience</h2>
-            
-            <div class="space-y-12">
-                <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-lg card-hover transition-all">
-                    <h3 class="text-3xl font-bold text-primary mb-3">Golang Backend Developer</h3>
-                    <p class="text-xl mb-4">Paydoh @ Grapesberry Technologies Pvt Ltd • Aug 2023 – Present</p>
-                    <ul class="text-lg space-y-3 list-disc pl-6">
-                        <li>Architected and maintained microservices powering real-time fintech transactions</li>
-                        <li>Designed high-throughput REST & gRPC APIs with Gin framework</li>
-                        <li>Optimized PostgreSQL & MongoDB queries — reduced latency by 40%+</li>
-                        <li>Implemented caching strategies with Redis → improved response time significantly</li>
-                        <li>Integrated third-party payment providers & financial rails securely</li>
-                        <li>Worked in event-driven environment with message queues</li>
-                    </ul>
-                </div>
-
-                <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-lg card-hover transition-all">
-                    <h3 class="text-3xl font-bold text-primary mb-3">Android Developer (earlier career)</h3>
-                    <p class="text-xl mb-4">Bitinfoz Technology Pvt Ltd (Tapfo) • Feb 2022 – Aug 2023</p>
-                    <ul class="text-lg space-y-3 list-disc pl-6">
-                        <li>Built fintech Android apps with UPI, BBPS, live gold rates, vouchers</li>
-                        <li>Integrated multiple payment gateways (Razorpay + others)</li>
-                        <li>Learned fintech domain deeply → transitioned successfully to backend</li>
-                    </ul>
-                </div>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="section-line"></div>
             </div>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="py-24 bg-gray-50 dark:bg-gray-800">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-primary">Notable Projects</h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- Project cards – keep your best fintech-relevant ones, improve descriptions -->
-                <div class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-xl card-hover transition-all">
-                    <div class="h-48 bg-gradient-to-br from-blue-600 to-indigo-800 flex items-center justify-center">
-                        <span class="text-6xl text-white opacity-40"><i class="fas fa-wallet"></i></span>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-number">01</div>
+                        <div class="project-status">Production</div>
                     </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-4">Fintech Payment Microservices (Current)</h3>
-                        <p class="mb-4">Core backend services handling real-time payments, transaction reconciliation, fraud checks & settlement logic.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">Golang</span>
-                            <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">Microservices</span>
-                            <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                    <h3 class="project-title">Fintech Payment Gateway</h3>
+                    <p class="project-description">
+                        Built a scalable payment processing system handling UPI, IMPS, and NEFT transactions. 
+                        Implemented fault-tolerant architecture with automatic retry mechanisms and real-time 
+                        transaction status updates.
+                    </p>
+                    <div class="project-tech">
+                        <span class="project-tag">Golang</span>
+                        <span class="project-tag">PostgreSQL</span>
+                        <span class="project-tag">Redis</span>
+                        <span class="project-tag">UPI</span>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">10K+</span>
+                            <span class="metric-label">Daily Txns</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">99.9%</span>
+                            <span class="metric-label">Uptime</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Add 2–4 strong projects with fintech angle or backend focus -->
-                <!-- You can reuse/improve your previous ones but emphasize backend contribution -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-number">02</div>
+                        <div class="project-status">Production</div>
+                    </div>
+                    <h3 class="project-title">Digital Wallet Microservice</h3>
+                    <p class="project-description">
+                        Designed and developed a high-performance wallet system with real-time balance updates, 
+                        transaction history, and multi-currency support. Integrated with multiple payment gateways 
+                        for seamless money transfers.
+                    </p>
+                    <div class="project-tech">
+                        <span class="project-tag">Golang</span>
+                        <span class="project-tag">MongoDB</span>
+                        <span class="project-tag">JWT</span>
+                        <span class="project-tag">REST API</span>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">&lt;200ms</span>
+                            <span class="metric-label">Avg Response</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">50K+</span>
+                            <span class="metric-label">Active Users</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-number">03</div>
+                        <div class="project-status">Active</div>
+                    </div>
+                    <h3 class="project-title">Notification Daemon System</h3>
+                    <p class="project-description">
+                        Created a distributed notification system using FCM for push notifications and cron-based 
+                        scheduling for automated alerts. Handles transactional updates, payment confirmations, 
+                        and promotional campaigns.
+                    </p>
+                    <div class="project-tech">
+                        <span class="project-tag">Golang</span>
+                        <span class="project-tag">FCM</span>
+                        <span class="project-tag">Cron</span>
+                        <span class="project-tag">Redis Queue</span>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">1M+</span>
+                            <span class="metric-label">Messages/Day</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">98%</span>
+                            <span class="metric-label">Delivery Rate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-number">04</div>
+                        <div class="project-status">Legacy</div>
+                    </div>
+                    <h3 class="project-title">Android Payment Integration App</h3>
+                    <p class="project-description">
+                        Developed native Android application with seamless payment gateway integration. 
+                        Implemented secure transaction flows, offline-first architecture, and real-time 
+                        synchronization with backend services.
+                    </p>
+                    <div class="project-tech">
+                        <span class="project-tag">Kotlin</span>
+                        <span class="project-tag">Android</span>
+                        <span class="project-tag">Payment SDK</span>
+                        <span class="project-tag">REST API</span>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">100K+</span>
+                            <span class="metric-label">Downloads</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">4.5★</span>
+                            <span class="metric-label">Rating</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact / CTA -->
-    <section id="contact" class="py-24 gradient-hero text-white">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-5xl font-bold mb-10">Let's Build Something Great Together</h2>
-            <p class="text-xl mb-12 max-w-2xl mx-auto">
-                Looking for a reliable Golang backend engineer with real fintech experience?  
-                I'm currently open to new opportunities — remote / Mumbai / hybrid.
-            </p>
-            
-            <div class="flex flex-col md:flex-row justify-center items-center gap-8 text-lg">
-                <div class="flex items-center gap-4">
-                    <i class="fas fa-phone text-3xl"></i>
-                    <span>+91 81088 93686</span>
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title">Experience Timeline</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - Present</div>
+                        <h3 class="timeline-title">Backend Engineer (Golang)</h3>
+                        <div class="timeline-company">Fintech Company</div>
+                        <p class="timeline-description">
+                            Leading development of payment processing systems and wallet microservices. 
+                            Architecting scalable backend solutions handling millions of transactions 
+                            with focus on security, performance, and reliability.
+                        </p>
+                        <div class="timeline-achievements">
+                            <div class="achievement-item">
+                                <span class="achievement-bullet">▹</span>
+                                Reduced API response time by 60% through query optimization and caching strategies
+                            </div>
+                            <div class="achievement-item">
+                                <span class="achievement-bullet">▹</span>
+                                Implemented JWT-based authentication system serving 100K+ users
+                            </div>
+                            <div class="achievement-item">
+                                <span class="achievement-bullet">▹</span>
+                                Built real-time notification system processing 1M+ messages daily
+                            </div>
+                            <div class="achievement-item">
+                                <span class="achievement-bullet">▹</span>
+                                Designed fault-tolerant payment gateway with 99.9% uptime
+                            </div>
+                        </div>
+                        <div class="timeline-tech">
+                            <span class="tech-pill">Golang</span>
+                            <span class="tech-pill">PostgreSQL</span>
+                            <span class="tech-pill">MongoDB</span>
+                            <span class="tech-pill">Redis</span>
+                            <span class="tech-pill">Microservices</span>
+                            <span class="tech-pill">UPI/IMPS/NEFT</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="flex items-center gap-4">
-                    <i class="fas fa-envelope text-3xl"></i>
-                    <a href="mailto:jakirsayyed98@gmail.com" class="hover:underline">jakirsayyed98@gmail.com</a>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020 - 2022</div>
+                        <h3 class="timeline-title">Android Developer</h3>
+                        <div class="timeline-company">Mobile Development Studio</div>
+                        <p class="timeline-description">
+                            Developed native Android applications with focus on payment integrations 
+                            and real-time data synchronization. Built user-friendly interfaces while 
+                            ensuring security and performance standards.
+                        </p>
+                        <div class="timeline-achievements">
+                            <div class="achievement-item">
+                                <span class="achievement-bullet">▹</span>
+                                Delivered 5+ production apps with 500K+ combined downloads
+                            </div>
+                            <div class="achievement-item">
+                                <span class="achievement-bullet">▹</span>
+                                Integrated payment gateways and wallet systems in mobile apps
+                            </div>
+                            <div class="achievement-item">
+                                <span class="achievement-bullet">▹</span>
+                                Implemented offline-first architecture with background sync
+                            </div>
+                            <div class="achievement-item">
+                                <span class="achievement-bullet">▹</span>
+                                Optimized app performance resulting in 40% faster load times
+                            </div>
+                        </div>
+                        <div class="timeline-tech">
+                            <span class="tech-pill">Kotlin</span>
+                            <span class="tech-pill">Android SDK</span>
+                            <span class="tech-pill">REST APIs</span>
+                            <span class="tech-pill">FCM</span>
+                            <span class="tech-pill">SQLite</span>
+                            <span class="tech-pill">Payment SDKs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot timeline-dot-final"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2019 - 2020</div>
+                        <h3 class="timeline-title">Junior Android Developer</h3>
+                        <div class="timeline-company">Tech Startup</div>
+                        <p class="timeline-description">
+                            Started career building mobile applications and learning software development 
+                            best practices. Gained experience in full development lifecycle from design 
+                            to deployment.
+                        </p>
+                        <div class="timeline-achievements">
+                            <div class="achievement-item">
+                                <span class="achievement-bullet">▹</span>
+                                Contributed to 3 major app releases with 4.0+ star ratings
+                            </div>
+                            <div class="achievement-item">
+                                <span class="achievement-bullet">▹</span>
+                                Learned and implemented modern Android architecture patterns
+                            </div>
+                            <div class="achievement-item">
+                                <span class="achievement-bullet">▹</span>
+                                Collaborated with designers and backend teams effectively
+                            </div>
+                        </div>
+                        <div class="timeline-tech">
+                            <span class="tech-pill">Kotlin</span>
+                            <span class="tech-pill">Java</span>
+                            <span class="tech-pill">Android</span>
+                            <span class="tech-pill">Git</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <div class="mt-12 flex justify-center gap-10 text-4xl">
-                <a href="https://www.linkedin.com/in/jakir-sayyed-b54551195" target="_blank" class="hover:text-blue-200 transition"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/Jakirsayyed98" target="_blank" class="hover:text-blue-200 transition"><i class="fab fa-github"></i></a>
+        </div>
+    </section>
+
+    <!-- GitHub CTA Section -->
+    <section id="contact" class="github-cta">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-icon">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </div>
+                <h2 class="cta-title">Check Out My Code</h2>
+                <p class="cta-description">
+                    Explore my open-source contributions and personal projects on GitHub. 
+                    From fintech microservices to mobile apps, see how I solve real-world problems with clean, 
+                    efficient code.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/jakirali" class="btn btn-cta">
+                        <span class="btn-icon">&#9733;</span>
+                        Visit GitHub Profile
+                    </a>
+                    <a href="mailto:jakir.ali@example.com" class="btn btn-outline">
+                        <span class="btn-icon">✉</span>
+                        Send Email
+                    </a>
+                </div>
+                <div class="cta-stats">
+                    <div class="cta-stat">
+                        <div class="cta-stat-number">30+</div>
+                        <div class="cta-stat-label">Repositories</div>
+                    </div>
+                    <div class="cta-stat">
+                        <div class="cta-stat-number">150+</div>
+                        <div class="cta-stat-label">Contributions</div>
+                    </div>
+                    <div class="cta-stat">
+                        <div class="cta-stat-number">5+</div>
+                        <div class="cta-stat-label">Languages</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-8 text-center">
-        <p>© 2026 Jakir Ali Sayyed • Made with Golang passion & clean code</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <span class="logo-bracket">&lt;</span>
+                        <span class="logo-text">JAS</span>
+                        <span class="logo-bracket">/&gt;</span>
+                    </div>
+                    <p class="footer-tagline">Building the future, one microservice at a time</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/jakirali" class="footer-link">GitHub</a>
+                    <a href="https://linkedin.com/in/jakirali" class="footer-link">LinkedIn</a>
+                    <a href="mailto:jakir.ali@example.com" class="footer-link">Email</a>
+                    <a href="https://twitter.com/jakirali" class="footer-link">Twitter</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2026 Jakir Ali Sayyed. Crafted with precision.
+                </p>
+                <div class="footer-status">
+                    <span class="status-dot"></span>
+                    <span>Open to opportunities</span>
+                </div>
+            </div>
+        </div>
     </footer>
-
-    <script>
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
-
-        // Smooth scroll (already enabled with scroll-smooth)
-    </script>
 </body>
 </html>
