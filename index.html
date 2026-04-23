@@ -1,175 +1,528 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jakir Ali Sayyed | Backend Engineer (Golang)</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jakir Sayyed — Backend Systems Engineer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap"
+    rel="stylesheet" />
 </head>
+
 <body>
 
-  <!-- HERO -->
-  <header class="container hero">
-    <h1>Jakir Ali Sayyed</h1>
-    <p class="role">
-      Backend Engineer (Golang) · Fintech Payments · Scalable Microservices
-    </p>
-    <p class="location">Mumbai, Maharashtra, India</p>
-
-    <div class="links">
-      <a href="mailto:jakirsayyed98@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/jakirsayyed" target="_blank">LinkedIn</a>
-      <a href="https://jakirsayyed98.github.io/" target="_blank">GitHub</a>
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">SYS_INIT</div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar"></div>
+      </div>
+      <div class="loader-status" id="loader-status">Booting kernel modules...</div>
     </div>
-  </header>
+  </div>
 
-  <!-- SUMMARY -->
-  <section class="container section">
-    <h2>Professional Summary</h2>
-    <p>
-      Backend Engineer with 3+ years of experience building scalable fintech
-      systems using Golang and microservice architecture. Currently working at
-      Paydoh, designing and maintaining backend services for wallets, UPI
-      payments, transactions, and budget management used in real-world
-      financial workflows.
-    </p>
-    <p>
-      Specialized in high-performance APIs, payment integrations, and
-      transaction-safe systems using Golang, PostgreSQL, MongoDB, Redis, and
-      Docker. Strong experience with CI/CD pipelines, containerized deployments,
-      and production debugging in fast-moving fintech environments.
-    </p>
-    <p>
-      Previously worked as an Android Developer, giving strong end-to-end
-      product understanding and solid API & client-side performance awareness.
-    </p>
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-brand"><span class="bracket">[</span>JS<span class="bracket">]</span></div>
+    <ul class="nav-links">
+      <li><a href="#hero" class="nav-link active" data-section="hero">HOME</a></li>
+      <li><a href="#architecture" class="nav-link" data-section="architecture">SYSTEM</a></li>
+      <li><a href="#about" class="nav-link" data-section="about">ABOUT</a></li>
+      <li><a href="#skills" class="nav-link" data-section="skills">STACK</a></li>
+      <li><a href="#projects" class="nav-link" data-section="projects">MODULES</a></li>
+      <li><a href="#experience" class="nav-link" data-section="experience">LOG</a></li>
+      <li><a href="#contact" class="nav-link" data-section="contact">PING</a></li>
+    </ul>
+    <div class="nav-status"><span class="status-dot"></span>ONLINE</div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="hero">
+    <canvas id="bg-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-tag">// BACKEND_SYSTEM v2.4.1</div>
+      <h1 class="hero-name">Jakir <span class="accent">Sayyed</span></h1>
+      <div class="hero-title">
+        <span class="type-prefix">&gt;&nbsp;</span>
+        <span id="typed-text"></span>
+        <span class="cursor">_</span>
+      </div>
+      <p class="hero-desc">Building scalable backend systems, fintech pipelines, and distributed microservices that
+        handle millions of requests.</p>
+      <div class="hero-meta">
+        <span><i class="icon-loc"></i> Mumbai, India</span>
+        <span><i class="icon-mail"></i> jakirsayyed98@gmail.com</span>
+        <span><i class="icon-phone"></i> +91 8108893686</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#architecture" class="btn-primary">VIEW SYSTEM</a>
+        <a href="#contact" class="btn-secondary">SEND REQUEST</a>
+        <a href="./JakirSayyed.pdf" class="btn-ghost" id="resume-btn" target="_blank" rel="noopener noreferrer">↓
+          RESUME</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" data-target="3">0</span><span class="stat-label">YRS EXP</span></div>
+        <div class="stat"><span class="stat-num" data-target="6">0</span><span class="stat-label">PROJECTS</span></div>
+        <div class="stat"><span class="stat-num" data-target="12">0</span><span class="stat-label">TECHNOLOGIES</span>
+        </div>
+        <div class="stat"><span class="stat-num" data-target="200">0</span><span class="stat-label">STORE
+            INTEGRATIONS</span></div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>SCROLL</span>
+    </div>
   </section>
 
-  <!-- SKILLS -->
-  <section class="container section">
-    <h2>Core Skills</h2>
+  <!-- ARCHITECTURE / PIPELINE SECTION -->
+  <section id="architecture" class="section">
+    <div class="section-header">
+      <div class="section-tag">// SYSTEM_ARCHITECTURE</div>
+      <h2>Request <span class="accent">Pipeline</span></h2>
+      <p>Live visualization of backend request flow architecture</p>
+    </div>
+    <div class="arch-container">
+      <canvas id="pipeline-canvas"></canvas>
+      <div class="arch-nodes" id="arch-nodes">
 
+        <div class="arch-node" id="node-mobile"
+          data-info="Client Layer: Mobile App / Web Browser initiates API calls with JSON payloads over HTTPS.">
+          <div class="node-icon">📱</div>
+          <div class="node-label">CLIENT</div>
+          <div class="node-sub">Mobile / Web</div>
+          <div class="node-pulse"></div>
+        </div>
+
+        <div class="arch-node" id="node-api"
+          data-info="API Gateway: Handles routing, rate limiting, SSL termination, and forwards requests to internal services.">
+          <div class="node-icon">🌐</div>
+          <div class="node-label">API GATEWAY</div>
+          <div class="node-sub">REST / HTTP</div>
+          <div class="node-pulse"></div>
+        </div>
+
+        <div class="arch-node" id="node-nginx"
+          data-info="NGINX Reverse Proxy: Load balancing, caching headers, and routing to microservice clusters.">
+          <div class="node-icon">⚙️</div>
+          <div class="node-label">NGINX</div>
+          <div class="node-sub">Reverse Proxy</div>
+          <div class="node-pulse"></div>
+        </div>
+
+        <div class="arch-node" id="node-auth"
+          data-info="JWT Auth Middleware: Validates Bearer tokens, extracts claims, checks expiry, and injects user context.">
+          <div class="node-icon">🔐</div>
+          <div class="node-label">AUTH</div>
+          <div class="node-sub">JWT / Middleware</div>
+          <div class="node-pulse"></div>
+        </div>
+
+        <div class="arch-node" id="node-services"
+          data-info="Golang Microservices: Wallet, Transactions, Notifications, Affiliates — each deployed independently with gRPC internal comms.">
+          <div class="node-icon">🔄</div>
+          <div class="node-label">MICROSERVICES</div>
+          <div class="node-sub">Golang / gRPC</div>
+          <div class="node-pulse"></div>
+        </div>
+
+        <div class="arch-node" id="node-queue"
+          data-info="Message Queue + Cron Jobs: Async task processing, FCM notification dispatch, scheduled jobs and retries.">
+          <div class="node-icon">📨</div>
+          <div class="node-label">QUEUE / CRON</div>
+          <div class="node-sub">Async Workers</div>
+          <div class="node-pulse"></div>
+        </div>
+
+        <div class="arch-node" id="node-db"
+          data-info="Data Layer: PostgreSQL for relational data, MongoDB for flexible docs, Redis for caching and session management.">
+          <div class="node-icon">🗄️</div>
+          <div class="node-label">DATABASE</div>
+          <div class="node-sub">PG / Mongo / Redis</div>
+          <div class="node-pulse"></div>
+        </div>
+
+      </div>
+
+      <div class="node-tooltip" id="node-tooltip"></div>
+    </div>
+
+    <div class="arch-legend">
+      <span class="legend-item"><span class="legend-dot blue"></span>Request Flow</span>
+      <span class="legend-item"><span class="legend-dot green"></span>Response Flow</span>
+      <span class="legend-item"><span class="legend-dot purple"></span>Async/Queue</span>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="section">
+    <div class="section-header">
+      <div class="section-tag">// ABOUT_MODULE</div>
+      <h2>System <span class="accent">Overview</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-terminal">
+        <div class="terminal-bar">
+          <span class="t-dot red"></span>
+          <span class="t-dot yellow"></span>
+          <span class="t-dot green"></span>
+          <span class="t-title">jakir@backend:~$</span>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          <div class="t-line"><span class="t-cmd">$ whoami</span></div>
+          <div class="t-line"><span class="t-out">Jakir Sayyed — Backend Developer</span></div>
+          <div class="t-line"><span class="t-cmd">$ cat summary.txt</span></div>
+          <div class="t-line t-multi"><span class="t-out">Backend-focused developer with experience in scalable systems,
+              fintech applications, REST APIs, and microservices. Strong background in Golang, PostgreSQL, MongoDB,
+              Redis, and Firebase.</span></div>
+          <div class="t-line"><span class="t-cmd">$ echo $PREV_ROLE</span></div>
+          <div class="t-line"><span class="t-out">Android Developer → Backend Engineer</span></div>
+          <div class="t-line"><span class="t-cmd">$ ls specializations/</span></div>
+          <div class="t-line"><span class="t-out">wallet_systems/ payment_gateways/ notification_service/
+              affiliate_tracking/</span></div>
+          <div class="t-line blink-line"><span class="t-cmd">$ _</span></div>
+        </div>
+      </div>
+      <div class="about-cards">
+        <div class="about-card reveal">
+          <div class="card-icon">⚡</div>
+          <h3>Scalable Systems</h3>
+          <p>Designed and built distributed microservices handling real-time financial transactions with zero downtime.
+          </p>
+        </div>
+        <div class="about-card reveal">
+          <div class="card-icon">🏦</div>
+          <h3>Fintech Expert</h3>
+          <p>Deep experience with payment gateway integrations, wallet systems, and regulatory compliance in fintech.
+          </p>
+        </div>
+        <div class="about-card reveal">
+          <div class="card-icon">📡</div>
+          <h3>API Architecture</h3>
+          <p>RESTful API design with JWT authentication, rate limiting, versioning, and comprehensive documentation.</p>
+        </div>
+        <div class="about-card reveal">
+          <div class="card-icon">🤖</div>
+          <h3>Automation</h3>
+          <p>Cron-based notification systems, FCM push delivery pipelines, and async job processing queues.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="section">
+    <div class="section-header">
+      <div class="section-tag">// TECH_STACK</div>
+      <h2>Core <span class="accent">Technologies</span></h2>
+    </div>
     <div class="skills-grid">
-      <div>
-        <h3>Languages</h3>
-        <ul>
-          <li>Golang</li>
-          <li>SQL</li>
-        </ul>
+      <div class="skill-card reveal" data-level="95">
+        <div class="skill-icon go">GO</div>
+        <div class="skill-info">
+          <div class="skill-name">Golang</div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="95"></div>
+          </div>
+          <div class="skill-tags"><span>Microservices</span><span>REST API</span><span>gRPC</span></div>
+        </div>
       </div>
-
-      <div>
-        <h3>Backend & Architecture</h3>
-        <ul>
-          <li>Microservices</li>
-          <li>REST APIs</li>
-          <li>JWT Authentication</li>
-          <li>Transaction-safe Systems</li>
-          <li>Idempotency & Validation</li>
-        </ul>
+      <div class="skill-card reveal" data-level="88">
+        <div class="skill-icon pg">PG</div>
+        <div class="skill-info">
+          <div class="skill-name">PostgreSQL</div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="88"></div>
+          </div>
+          <div class="skill-tags"><span>Relational</span><span>Transactions</span></div>
+        </div>
       </div>
-
-      <div>
-        <h3>Databases & Caching</h3>
-        <ul>
-          <li>PostgreSQL</li>
-          <li>MongoDB</li>
-          <li>Redis</li>
-        </ul>
+      <div class="skill-card reveal" data-level="85">
+        <div class="skill-icon mg">MG</div>
+        <div class="skill-info">
+          <div class="skill-name">MongoDB</div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="85"></div>
+          </div>
+          <div class="skill-tags"><span>NoSQL</span><span>Aggregation</span></div>
+        </div>
       </div>
-
-      <div>
-        <h3>DevOps & Infra</h3>
-        <ul>
-          <li>Docker</li>
-          <li>CI/CD Pipelines</li>
-          <li>Linux</li>
-          <li>Production Debugging</li>
-        </ul>
+      <div class="skill-card reveal" data-level="82">
+        <div class="skill-icon rd">RD</div>
+        <div class="skill-info">
+          <div class="skill-name">Redis</div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="82"></div>
+          </div>
+          <div class="skill-tags"><span>Cache</span><span>Sessions</span><span>Pub/Sub</span></div>
+        </div>
+      </div>
+      <div class="skill-card reveal" data-level="80">
+        <div class="skill-icon fb">FB</div>
+        <div class="skill-info">
+          <div class="skill-name">Firebase</div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="80"></div>
+          </div>
+          <div class="skill-tags"><span>FCM</span><span>Auth</span><span>Firestore</span></div>
+        </div>
+      </div>
+      <div class="skill-card reveal" data-level="78">
+        <div class="skill-icon and">KT</div>
+        <div class="skill-info">
+          <div class="skill-name">Android / Kotlin</div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="78"></div>
+          </div>
+          <div class="skill-tags"><span>MVVM</span><span>Jetpack</span></div>
+        </div>
+      </div>
+      <div class="skill-card reveal" data-level="75">
+        <div class="skill-icon lv">LV</div>
+        <div class="skill-info">
+          <div class="skill-name">Laravel</div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="75"></div>
+          </div>
+          <div class="skill-tags"><span>PHP</span><span>APIs</span></div>
+        </div>
+      </div>
+      <div class="skill-card reveal" data-level="85">
+        <div class="skill-icon jwt">🔑</div>
+        <div class="skill-info">
+          <div class="skill-name">JWT / Auth</div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="85"></div>
+          </div>
+          <div class="skill-tags"><span>OAuth2</span><span>Middleware</span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
-  <section class="container section">
-    <h2>Experience</h2>
-
-    <div class="experience">
-      <h3>Backend Engineer (Golang) — Paydoh</h3>
-      <span>Aug 2023 – Present · Mumbai</span>
-      <ul>
-        <li>
-          Designed and developed scalable Golang microservices for fintech
-          operations including wallets, UPI payments, transactions, and budget
-          management.
-        </li>
-        <li>
-          Built transaction-safe APIs handling high-volume financial data using
-          PostgreSQL and Redis with strong consistency and auditability.
-        </li>
-        <li>
-          Integrated UPI payment flows including request validation,
-          idempotency handling, and structured logging.
-        </li>
-        <li>
-          Implemented CI/CD pipelines to automate testing, builds, and
-          deployments, improving release stability.
-        </li>
-        <li>
-          Containerized backend services using Docker and supported production
-          deployments in a microservices environment.
-        </li>
-        <li>
-          Worked closely with product and mobile teams to optimize API
-          contracts and improve response times.
-        </li>
-      </ul>
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="section">
+    <div class="section-header">
+      <div class="section-tag">// DEPLOYED_MODULES</div>
+      <h2>Production <span class="accent">Systems</span></h2>
     </div>
+    <div class="projects-grid">
 
-    <div class="experience">
-      <h3>Android Application Developer — Bitinfoz Technologies</h3>
-      <span>Feb 2022 – Aug 2023 · Mumbai</span>
-      <ul>
-        <li>
-          Developed native Android features for fintech apps including
-          shopping, wallets, and BBPS bill payments.
-        </li>
-        <li>
-          Integrated bill payment and cashback workflows with backend APIs.
-        </li>
-        <li>
-          Implemented API integration, error handling, and performance
-          optimizations in production apps.
-        </li>
-        <li>
-          Assisted in testing and debugging payment-related issues to reduce
-          production incidents.
-        </li>
-      </ul>
+      <div class="project-card reveal">
+        <div class="proj-status online">● PRODUCTION</div>
+        <div class="proj-icon">💸</div>
+        <h3>Fintech Microservices</h3>
+        <p>Distributed system handling wallet operations, real-time transactions, and withdrawal processing with atomic
+          guarantees.</p>
+        <div class="proj-tech">
+          <span>Golang</span><span>PostgreSQL</span><span>Redis</span><span>gRPC</span>
+        </div>
+        <div class="proj-metrics">
+          <span>🔄 Microservices</span>
+          <span>🏦 Wallet + Tx + Withdrawal</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="proj-status online">● PRODUCTION</div>
+        <div class="proj-icon">📢</div>
+        <h3>Notification Engine</h3>
+        <p>Cron-triggered and event-driven notification system with FCM push delivery, retry logic, and delivery
+          tracking.</p>
+        <div class="proj-tech">
+          <span>Golang</span><span>Firebase FCM</span><span>Cron</span><span>Redis</span>
+        </div>
+        <div class="proj-metrics">
+          <span>⏱ Cron + Event</span>
+          <span>📨 Push + In-App</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="proj-status online">● PRODUCTION</div>
+        <div class="proj-icon">🔗</div>
+        <h3>Affiliate Cashback System</h3>
+        <p>Full affiliate tracking pipeline with cookie management, click attribution, order synchronization, and
+          cashback payout.</p>
+        <div class="proj-tech">
+          <span>Golang</span><span>MongoDB</span><span>PostgreSQL</span><span>Cron</span>
+        </div>
+        <div class="proj-metrics">
+          <span>🍪 Cookie Tracking</span>
+          <span>💰 Order Sync</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="proj-status online">● PRODUCTION</div>
+        <div class="proj-icon">🛒</div>
+        <h3>PerkHub App</h3>
+        <p>Cashback aggregator platform integrating 200+ stores with real-time inventory sync, user wallets, and rewards
+          tracking.</p>
+        <div class="proj-tech">
+          <span>Android</span><span>Kotlin</span><span>REST API</span><span>Firebase</span>
+        </div>
+        <div class="proj-metrics">
+          <span>🏪 200+ Stores</span>
+          <span>💳 Cashback Engine</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="proj-status online">● DEPLOYED</div>
+        <div class="proj-icon">♻️</div>
+        <h3>Scrapwala App</h3>
+        <p>On-demand scrap collection app with real-time location tracking, driver assignment, and dynamic pricing
+          engine.</p>
+        <div class="proj-tech">
+          <span>Android</span><span>Kotlin</span><span>Google Maps</span><span>Firebase</span>
+        </div>
+        <div class="proj-metrics">
+          <span>📍 Location Tracking</span>
+          <span>🚚 Driver Assignment</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="proj-status archive">● ARCHIVED</div>
+        <div class="proj-icon">🦠</div>
+        <h3>COVID Tracker</h3>
+        <p>Real-time COVID-19 statistics dashboard with live API data, geospatial visualization, and trend analytics.
+        </p>
+        <div class="proj-tech">
+          <span>Android</span><span>REST API</span><span>Charts</span>
+        </div>
+        <div class="proj-metrics">
+          <span>📊 Data Viz</span>
+          <span>🌍 Global Stats</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- EDUCATION -->
-  <section class="container section">
-    <h2>Education & Certification</h2>
-
-    <div class="education">
-      <h3>Bachelor of Commerce (B.Com)</h3>
-      <span>Sandesh Vidyalaya, Mumbai University · 2018 – 2021</span>
+  <!-- EXPERIENCE SECTION -->
+  <section id="experience" class="section">
+    <div class="section-header">
+      <div class="section-tag">// PROCESS_LOG</div>
+      <h2>Work <span class="accent">History</span></h2>
     </div>
+    <div class="timeline">
 
-    <div class="education">
-      <h3>Android Development Certification</h3>
-      <span>2018 – 2019</span>
+      <div class="timeline-item reveal">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="tl-header">
+            <div class="tl-company">Paydoh — Grapesberry Technologies Pvt Ltd</div>
+            <div class="tl-period">AUG 2023 — PRESENT</div>
+          </div>
+          <div class="tl-role">Backend Developer / Android Developer</div>
+          <div class="tl-desc">Designed and built scalable backend systems for a fintech platform. Developed shopping
+            modules, integrated payment gateways, built affiliate tracking infrastructure, and notification pipelines
+            using Golang microservices.</div>
+          <div class="tl-tags">
+            <span>Golang</span><span>PostgreSQL</span><span>Redis</span><span>Microservices</span><span>Android</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="tl-header">
+            <div class="tl-company">Bitinfoz Technology Pvt Ltd</div>
+            <div class="tl-period">FEB 2022 — AUG 2023</div>
+          </div>
+          <div class="tl-role">Android Developer</div>
+          <div class="tl-desc">Handled end-to-end Android application development including UI, API integration, local
+            storage, payment flows, and app deployment. Managed full product lifecycle from design to Play Store
+            release.</div>
+          <div class="tl-tags">
+            <span>Kotlin</span><span>Android</span><span>REST API</span><span>Firebase</span><span>MVVM</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section">
+    <div class="section-header">
+      <div class="section-tag">// ESTABLISH_CONNECTION</div>
+      <h2>Send a <span class="accent">Request</span></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="c-icon">📧</div>
+          <div class="c-detail">
+            <div class="c-label">EMAIL</div>
+            <div class="c-val">jakirsayyed98@gmail.com</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="c-icon">📱</div>
+          <div class="c-detail">
+            <div class="c-label">PHONE</div>
+            <div class="c-val">+91 8108893686</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="c-icon">📍</div>
+          <div class="c-detail">
+            <div class="c-label">LOCATION</div>
+            <div class="c-val">Mumbai, India</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="c-icon">🟢</div>
+          <div class="c-detail">
+            <div class="c-label">STATUS</div>
+            <div class="c-val status-open">Open to Opportunities</div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" id="contact-form">
+        <div class="form-group">
+          <label>NAME</label>
+          <input type="text" placeholder="Enter your name" required />
+        </div>
+        <div class="form-group">
+          <label>EMAIL</label>
+          <input type="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label>SUBJECT</label>
+          <input type="text" placeholder="Project / Collaboration / Hiring" required />
+        </div>
+        <div class="form-group">
+          <label>MESSAGE</label>
+          <textarea rows="5" placeholder="Describe your request..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary">SEND REQUEST →</button>
+        <div class="form-msg" id="form-msg"></div>
+      </form>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="container footer">
-    <p>
-      jakirsayyed98@gmail.com · Mumbai, India
-    </p>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><span class="bracket">[</span>Jakir Sayyed<span class="bracket">]</span> — Backend
+        Systems Engineer</div>
+      <div class="footer-status">
+        <span class="status-dot"></span>ALL SYSTEMS OPERATIONAL
+      </div>
+      <div class="footer-note">Built with pure HTML/CSS/JS · Mumbai, India</div>
+    </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
+
 </html>
